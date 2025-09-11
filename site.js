@@ -21,3 +21,10 @@ const isEvening = hours >= 17 || hours < 4 // is it evening?
 if (isMorning) { heading2.textContent = 'Good Morning!' }
 else if (isAfternoon) { heading2.textContent = 'Good Afternoon!' }
 else if (isEvening) { heading2.textContent = 'Good Evening!'}
+
+//variable storing a secret key
+const key = "It's a secret to everybody."
+
+const secretMessage = 'I have enjoyed learning JavaScript so far this semester. I think you are a great teacher and I enjoy some of the comments/jokes you make during the lectures. You definitely make the class more interesting and fun. As for the key, are you referencing zelda?'
+
+localStorage.setItem(key, secretMessage)
