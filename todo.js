@@ -30,7 +30,8 @@ addButton.addEventListener('click', () => {
     const newItem = itemText.value
     if(!(newItem == '')) {
         todos.push({text: newItem, completed: false})
-        localStorage.setItem('todo-list', JSON.stringify(todos))  
+        localStorage.setItem('todo-list', JSON.stringify(todos))
+        itemText.value = ''  
     }   
     //render to do list items on the page
     renderToDos()  
