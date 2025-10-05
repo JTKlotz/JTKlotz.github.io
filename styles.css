@@ -30,12 +30,28 @@ section {
     padding-right: 20px;
 }
 /*Layout Styles*/
- #top, #welcome {
+ #top, #welcome, #main {
     position: relative;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
    
+}
+
+#list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+#list h2 {
+    padding-left: 20px;
+}
+
+#container {
+    padding-left: 20px;
+
 }
 
 .left {
