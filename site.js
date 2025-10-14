@@ -1,3 +1,55 @@
+(async () => { 
+
+    //fetch random pokemon and return as an object
+    const getRandomPokeman = async url => {
+        const response = await fetch(url)
+        return await response.json()
+    }
+
+   const renderPokemon = pokemon => {
+
+        //destructure object
+        const {sprites, name} = pokemon
+        
+        //create img 
+        const img = document.createElement('img')
+
+        //assign random pokemon to the image's src attribute
+        img.src = sprites.front_default
+
+        //assign random pokemon's name to the alt attribute
+        img.alt = name
+
+        //increase height and width
+        img.height = 200
+        img.width = 200
+
+        const figCaption = document.createElement('figcaption')
+        figCaption.textContent = name
+
+        //select div and assignas parent element
+        const parentElement = document.querySelector('#pokemon')
+        //clear out exitsing picture
+        parentElement.innerHTML = ''
+        //add random pokemon image to div 
+        parentElement.append(img)
+        parentElement.append(figCaption)
+   }
+ 
+   //generate random pokemon
+   const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150)
+   
+   //get random pokemon as an object
+   const randomPokemon = await getRandomPokeman(url)
+
+   //display pokemon on homepage
+   renderPokemon(randomPokemon)
+
+
+})()
+
+
+
 
 const prevButton = document.querySelector('#prev')
 const nextButton = document.querySelector('#next')
